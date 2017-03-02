@@ -4,13 +4,14 @@ import abstractClasses.Entity;
 
 public class Priest extends Entity{
 
-	private int mana;
+	private int mana; //max mana 200
 	private int manaRegen;
 	
 	public Priest(String name) {
 		super(name);
 		this.mana = 200;
 		this.manaRegen = 20;
+		this.setDef(15);
 	}
 
 	public int getMana() {

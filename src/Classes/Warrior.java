@@ -4,10 +4,11 @@ import abstractClasses.Entity;
 
 public class Warrior extends Entity{
 
-	private int rage;
+	private int rage; //max rage is 120
 	
 	public Warrior(String name) {
 		super(name);
+		this.setDef(25);
 	}
 
 	public int getRage() {
@@ -18,34 +19,42 @@ public class Warrior extends Entity{
 		this.rage = rage;
 	}
 
-	@Override
 	public void attack1() {
-		// TODO Auto-generated method stub
-		
+		/*
+		 * Name:				Cleave
+		 * Rage regeneration:	15
+		 * Effect:				30 damage. Bleed for 2 turns
+		 */
 	}
 
-	@Override
 	public void attack2() {
-		// TODO Auto-generated method stub
-		
+		/*
+		 * Name:				Heroic Strike
+		 * Rage regeneration:	25			
+		 * Effect:				35 damage.
+		 */
 	}
 
-	@Override
 	public void attack3() {
-		// TODO Auto-generated method stub
-		
+		/*
+		 * Name:				Slam
+		 * Rage cost:			90
+		 * Effect:				90 damage. 40% chance to stun
+		 */
 	}
 
-	@Override
 	public void attack4() {
-		// TODO Auto-generated method stub
-		
+		/*
+		 * Name:				Mortal Strike
+		 * Rage cost:			70
+		 * Effect:				45 damage + 25 if target is bleeding
+		 */
 	}
 
-	@Override
 	public void attack5() {
-		// TODO Auto-generated method stub
-		
+		/*
+		 * normal attack 20
+		 */
 	}
 	
 }
