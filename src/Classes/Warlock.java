@@ -17,6 +17,36 @@ public class Warlock extends Entity{
 	public void setMana(int mana) {
 		this.mana = mana;
 	}
+
+	@Override
+	public void attack1() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void attack2() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void attack3() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void attack4() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void attack5() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }

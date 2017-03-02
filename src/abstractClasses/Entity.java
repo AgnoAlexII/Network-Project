@@ -1,6 +1,6 @@
 package abstractClasses;
 
-public class Entity {
+public abstract class Entity {
 
 	private String name;
 	private int hp;
@@ -10,6 +10,7 @@ public class Entity {
 	
 	public Entity(String name){
 		this.name = name;
+		this.hp = 250;
 	}
 	public String getName() {
 		return name;
@@ -42,4 +43,9 @@ public class Entity {
 		this.speed = speed;
 	}
 	
+	public abstract void attack1();
+	public abstract void attack2();
+	public abstract void attack3();
+	public abstract void attack4();
+	public abstract void attack5();
 }

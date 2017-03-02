@@ -19,6 +19,36 @@ public class Rogue extends Entity{
 	public void setEnergy(int energy) {
 		this.energy = energy;
 	}
+
+	@Override
+	public void attack1() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void attack2() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void attack3() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void attack4() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void attack5() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }
