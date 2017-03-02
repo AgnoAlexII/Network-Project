@@ -2,12 +2,12 @@ package Classes;
 
 import abstractClasses.Entity;
 
-public class Thief extends Entity{
+public class Rogue extends Entity{
 
 	private int energy;
 
 	
-	public Thief(String name) {
+	public Rogue(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub
 	}

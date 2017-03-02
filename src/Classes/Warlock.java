@@ -2,11 +2,11 @@ package Classes;
 
 import abstractClasses.Entity;
 
-public class blackMage extends Entity{
+public class Warlock extends Entity{
 
 	private int mana;
 	
-	public blackMage(String name) {
+	public Warlock(String name) {
 		super(name);
 	}
 

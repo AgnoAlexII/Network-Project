@@ -2,11 +2,11 @@ package Classes;
 
 import abstractClasses.Entity;
 
-public class redMage extends Entity{
+public class Mage extends Entity{
 
 	private int mana;
 	
-	public redMage(String name) {
+	public Mage(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
