@@ -34,10 +34,9 @@ public class Rogue extends Entity{
 
 	public void attack2() {
 		/*
-		 * Name:			Vanish
-		 * Energy cost:		80
-		 * Effect:			goes to stealth mode for 1 turn. cannot be targeted by enemy. +15 to energy regen
-		 * 
+		 * Name:			Blind
+		 * Energy Cost:		45
+		 * Effect:			60% chance to disable
 		 */
 	}
 
@@ -45,8 +44,8 @@ public class Rogue extends Entity{
 	public void attack3() {
 		/*
 		 * Name:			Backstab
-		 * Energy cost:		60
-		 * Effect:			stabs the enemy for 90. 60% chance to stun. must be stealthed
+		 * Energy cost:		90
+		 * Effect:			stabs the enemy for 90.
 		 * 
 		 */
 		
@@ -55,7 +54,7 @@ public class Rogue extends Entity{
 	
 	public void attack4() {
 		/*
-		 * Name:			Slice and dice
+		 * Name:			Rupture
 		 * Energy cost:		40
 		 * Effect:			50 damage
 		 */

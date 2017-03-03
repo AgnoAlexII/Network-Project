@@ -1,5 +1,6 @@
 package mageSkills;
 import Skills.Skills;
+import skillTypes.BuffMethod;
 
 public class ArcanePower extends Skills implements BuffMethod{
 	private int manaCost;

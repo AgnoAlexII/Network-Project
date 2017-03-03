@@ -29,7 +29,7 @@ public class Warrior extends Entity{
 		/*
 		 * Name:				Cleave
 		 * Rage regeneration:	15
-		 * Effect:				30 damage. Bleed for 2 turns
+		 * Effect:				15 damage
 		 */
 	}
 
@@ -37,23 +37,23 @@ public class Warrior extends Entity{
 		/*
 		 * Name:				Heroic Strike
 		 * Rage regeneration:	25			
-		 * Effect:				35 damage.
+		 * Effect:				25 damage.
 		 */
 	}
 
 	public void attack3() {
 		/*
 		 * Name:				Slam
-		 * Rage cost:			90
-		 * Effect:				90 damage. 40% chance to stun
+		 * Rage cost:			60
+		 * Effect:				60% chance to stun
 		 */
 	}
 
 	public void attack4() {
 		/*
 		 * Name:				Mortal Strike
-		 * Rage cost:			70
-		 * Effect:				45 damage + 25 if target is bleeding
+		 * Rage cost:			90
+		 * Effect:				90 damage
 		 */
 	}
 

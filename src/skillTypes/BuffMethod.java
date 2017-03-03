@@ -1,4 +1,4 @@
-package mageSkills;
+package skillTypes;
 
 public interface BuffMethod {
 	public static final String Type = "Buff";

@@ -25,7 +25,7 @@ public class Priest extends Entity{
 	public void attack1() {
 		/*
 		 * Name:		Heal
-		 * Mana Cost:	35
+		 * Mana Cost:	45
 		 * Effect:		Heal for 30
 		 */
 		
@@ -33,9 +33,9 @@ public class Priest extends Entity{
 
 	public void attack2() {
 		/*
-		 * Name:		Renew
+		 * Name:		Lesser Heal
 		 * Mana Cost:	25
-		 * Effect:		Heal 15 for 3 turns
+		 * Effect:		Heal 15
 		 */
 		
 	}
@@ -45,7 +45,6 @@ public class Priest extends Entity{
 		 * Name:		Devouring Plague
 		 * Mana Cost:	50
 		 * Effect:		90 damage in the span of 3 turns
-		 * 				Heals caster 15 per turn
 		 */
 	}
 
