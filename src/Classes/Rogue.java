@@ -27,7 +27,7 @@ public class Rogue extends Entity{
 		/*
 		 * Name:			Hemmorage
 		 * Energy cost:		35
-		 * Effect:			60 damage in 3 turns
+		 * Effect:			20 damage for 3 turns
 		 */
 		
 	}
@@ -35,7 +35,7 @@ public class Rogue extends Entity{
 	public void attack2() {
 		/*
 		 * Name:			Vanish
-		 * Energy cost:		45
+		 * Energy cost:		80
 		 * Effect:			goes to stealth mode for 1 turn. cannot be targeted by enemy. +15 to energy regen
 		 * 
 		 */

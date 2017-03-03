@@ -47,7 +47,6 @@ public class Priest extends Entity{
 		 * Effect:		90 damage in the span of 3 turns
 		 * 				Heals caster 15 per turn
 		 */
-		
 	}
 
 	public void attack4() {

@@ -11,6 +11,12 @@ public class Warrior extends Entity{
 		this.setDef(25);
 	}
 
+	public void upkeep(){
+		rage -= 10;
+		if (rage < 0)
+			rage = 0;
+	}
+	
 	public int getRage() {
 		return rage;
 	}

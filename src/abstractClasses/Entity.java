@@ -1,12 +1,15 @@
 package abstractClasses;
 
+import Skills.Skills;
+
 public abstract class Entity {
 
-	private String name;
-	private int hp;
-	private int atk;
-	private int def;
-	private int speed;
+	protected String name;
+	protected int hp;
+	protected int atk;
+	protected int def;
+	protected int speed;
+	protected Skills skill;
 	
 	public Entity(String name){
 		this.name = name;
@@ -43,9 +46,5 @@ public abstract class Entity {
 		this.speed = speed;
 	}
 	
-	public abstract void attack1();
-	public abstract void attack2();
-	public abstract void attack3();
-	public abstract void attack4();
-	public abstract void attack5();
+	
 }
