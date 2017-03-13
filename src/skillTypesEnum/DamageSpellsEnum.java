@@ -11,6 +11,10 @@ import rogueSkills.KidneyShot;
 import rogueSkills.Mutilate;
 import rogueSkills.Rupture;
 import skillTypesClasses.DamageSpell;
+import warlockSkills.ChaosBolt;
+import warlockSkills.Conflagrate;
+import warlockSkills.Haunt;
+import warlockSkills.Incinerate;
 import warriorSkills.Bladestorm;
 import warriorSkills.Cleave;
 import warriorSkills.HeroicStrike;
@@ -31,7 +35,11 @@ public enum DamageSpellsEnum {
 	CLEAVE(1, "WARRIOR", new Cleave()),
 	BLADESTORM(2, "WARRIOR", new Bladestorm()),
 	HEROICSTRIKE(3, "WARRIOR", new HeroicStrike()),
-	MORTALSTRIKE(4, "WARRIOR", new MortalStrike());
+	MORTALSTRIKE(4, "WARRIOR", new MortalStrike()),
+	CHAOSBOLT(1, "WARLOCK", new ChaosBolt()),
+	CONFLAGRATE(2, "WARLOCK", new Conflagrate()),
+	HAUNT(3, "WARLOCK", new Haunt()),
+	INCINERATE(4, "WARLOCK", new Incinerate());
 	
 	
 	private int skillNumber;

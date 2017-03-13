@@ -20,9 +20,9 @@ public class Warlock extends Entity{
 
 	public void attack1() {
 		/*
-		 * Name:		Fear
-		 * Mana Cost:	45
-		 * Effect:		60% chance to fear target for 1 turn
+		 * Name:		Chaos Bolt
+		 * Mana Cost:	50
+		 * Effect:		50
 		 * 
 		 */
 		
