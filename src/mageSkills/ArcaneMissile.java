@@ -1,18 +1,11 @@
 package mageSkills;
 
-import Skills.Skills;
-import skillTypes.DamageMethod;
+import skillTypesClasses.DamageSpell;
 
-public class ArcaneMissile extends Skills implements DamageMethod{
-
-	private int manaCost;
+public class ArcaneMissile extends DamageSpell{
 	
 	public ArcaneMissile(){
-		manaCost = 35;
+		super(30,35);
 	}
-	public void doTheDamage() {
-		
-	}
-
 	
 }

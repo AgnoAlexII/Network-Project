@@ -1,15 +1,13 @@
 package abstractClasses;
 
-import Skills.Skills;
-
 public abstract class Entity {
 
 	protected String name;
 	protected int hp;
 	protected int atk;
 	protected int def;
-	protected int speed;
-	protected Skills skill;
+	protected int mana;
+	protected int manaRegen;
 	
 	public Entity(String name){
 		this.name = name;
@@ -39,12 +37,16 @@ public abstract class Entity {
 	public void setDef(int def) {
 		this.def = def;
 	}
-	public int getSpeed() {
-		return speed;
+	public int getMana() {
+		return mana;
 	}
-	public void setSpeed(int speed) {
-		this.speed = speed;
+	public void setMana(int mana) {
+		this.mana = mana;
 	}
-	
-	
+	public int getManaRegen() {
+		return manaRegen;
+	}
+	public void setManaRegen(int manaRegen) {
+		this.manaRegen = manaRegen;
+	}
 }

@@ -1,23 +1,10 @@
 package warriorSkills;
 
-import Skills.Skills;
-import skillTypes.DamageMethod;
+import skillTypesClasses.DamageSpell;
 
-public class MortalStrike extends Skills implements DamageMethod{
+public class MortalStrike extends DamageSpell{
 
-	private int rageCost;
-	private int rageRegen;
-	
 	public MortalStrike(){
-		rageCost = 90;
-		rageRegen = 0;
+		super(90, 90);
 	}
-
-	@Override
-	public void doTheDamage() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
 }

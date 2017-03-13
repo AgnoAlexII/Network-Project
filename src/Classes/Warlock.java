@@ -4,22 +4,18 @@ import abstractClasses.Entity;
 
 public class Warlock extends Entity{
 
-	private int mana; //max mana 200
-	private int manaRegen;
-	
 	public Warlock(String name) {
 		super(name);
 		this.mana = 200;
 		this.manaRegen = 15;
-		this.setDef(15);
+		this.def = 15;
+		this.atk = 15;
 	}
 
-	public int getMana() {
-		return mana;
-	}
-
-	public void setMana(int mana) {
-		this.mana = mana;
+	public void upkeep(){
+		mana += manaRegen;
+		if(mana > 200)
+			mana = 200;
 	}
 
 	public void attack1() {
@@ -34,27 +30,27 @@ public class Warlock extends Entity{
 
 	public void attack2() {
 		/*
-		 * Name:		Corruption
-		 * Mana Cost:	30
-		 * Effect:		30 damage over 3 turns
+		 * Name:		Incinerate
+		 * Mana Cost:	40
+		 * Effect:		40
 		 * 
 		 */
 	}
 
 	public void attack3() {
 		/*
-		 * Name:		Unstable Affliction
-		 * Mana Cost:	45
-		 * Effect:		80 damage over 4 turns
+		 * Name:		Conflagrate
+		 * Mana Cost:	70
+		 * Effect:		60
 		 * 
 		 */
 	}
 
 	public void attack4() {
 		/*
-		 * Name:		Immolate
-		 * Mana Cost:	35
-		 * Effect:		45 damage over 3 turns
+		 * Name:		Haunt
+		 * Mana Cost:	25
+		 * Effect:		30
 		 * 
 		 */
 	}

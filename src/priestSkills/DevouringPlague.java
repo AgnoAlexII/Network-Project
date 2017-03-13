@@ -1,19 +1,10 @@
 package priestSkills;
 
-import Skills.Skills;
-import skillTypes.DamageMethod;
+import skillTypesClasses.DamageSpell;
 
-public class DevouringPlague extends Skills implements DamageMethod{
+public class DevouringPlague extends DamageSpell{
 
-	protected int manaCost;
-	
 	public DevouringPlague(){
-		manaCost = 50;
-	}
-
-	@Override
-	public void doTheDamage() {
-		// TODO Auto-generated method stub
-		
+		super(90,80);
 	}
 }

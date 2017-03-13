@@ -4,22 +4,18 @@ import abstractClasses.Entity;
 
 public class Priest extends Entity{
 
-	private int mana; //max mana 200
-	private int manaRegen;
-	
 	public Priest(String name) {
 		super(name);
 		this.mana = 200;
 		this.manaRegen = 20;
-		this.setDef(15);
+		this.def = 15;
+		this.atk = 15;
 	}
 
-	public int getMana() {
-		return mana;
-	}
-
-	public void setMana(int mana) {
-		this.mana = mana;
+	public void upkeep(){
+		mana += manaRegen;
+		if(mana > 200)
+			mana = 200;
 	}
 
 	public void attack1() {
@@ -43,8 +39,8 @@ public class Priest extends Entity{
 	public void attack3() {
 		/*
 		 * Name:		Devouring Plague
-		 * Mana Cost:	50
-		 * Effect:		90 damage in the span of 3 turns
+		 * Mana Cost:	80
+		 * Effect:		90
 		 */
 	}
 

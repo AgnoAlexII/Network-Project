@@ -1,19 +1,11 @@
 package priestSkills;
 
-import Skills.Skills;
-import skillTypes.HealMethod;
+import skillTypesClasses.HealingSpell;
 
-public class Heal extends Skills implements HealMethod{
+public class Heal extends HealingSpell{
 
-	protected int manaCost;
-	
 	public Heal(){
-		manaCost = 25;
+		super(30, 45);
 	}
-
-	public void heal() {
-			
-	}
-	
 	
 }

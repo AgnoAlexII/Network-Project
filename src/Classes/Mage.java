@@ -1,18 +1,15 @@
 package Classes;
 
-import Skills.Skills;
 import abstractClasses.Entity;
 
 public class Mage extends Entity{
-
-	private int mana; // max mana 200
-	private int manaRegen;
 	
 	public Mage(String name) {
 		super(name);
 		this.mana = 200;
 		this.manaRegen = 10;
-		this.setDef(15);
+		this.def = 15;
+		this.atk = 15;
 	}
 
 	public void upkeep(){
@@ -20,29 +17,12 @@ public class Mage extends Entity{
 		if(mana > 200)
 			mana = 200;
 	}
-	public int getMana() {
-		return mana;
-	}
-
-	public void setMana(int mana) {
-		this.mana = mana;
-	}
-	
-	public int performSkill(int enemyHP, int enemyDEF, int chosenSkill) {
-		
-		skill = Skills.getSkillOfClass(chosenSkill, name);
-		
-		
-		return enemyHP;
-		
-	}
 
 //	public void attack1() {
 //		/*
-//		 * Name:		Arcane Power
-//		 * Mana cost: 	30
-//		 * Effect:		Spells deal 20% more damage for 2 turns
-//		 * 				Spell mana cost increased by 20%
+//		 * Name:		Arcane Barrage
+//		 * Mana cost: 	65
+//		 * Effect:		70
 //		 */
 //		
 //	}
@@ -68,9 +48,9 @@ public class Mage extends Entity{
 //
 //	public void attack4() {
 //		/*
-//		 * Name:		Frostbite
-//		 * Mana cost:	50
-//		 * Effect:		60% chance to freeze target for 1 turn
+//		 * Name:		Blizzard
+//		 * Mana cost:	80
+//		 * Effect:		80
 //		 * 
 //		 */
 //		

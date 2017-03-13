@@ -80,5 +80,11 @@ public class Controller {
 		}
 	}
 	
-	
+	public void battle(){
+		while(player1hp > 0 && player2hp > 0){
+			/*
+			 * battle logic
+			 */
+		}
+	}
 }

@@ -1,17 +1,10 @@
 package warlockSkills;
 
-import Skills.Skills;
-import skillTypes.CrowdControl;
+import skillTypesClasses.CrowdControl;
 
-public class Fear extends Skills implements CrowdControl{
+public class Fear extends CrowdControl{
 
-	private int manaCost;
-	
 	public Fear(){
-		manaCost = 45;
-	}
-	public void disable() {
-	
 	}
 
 	

@@ -1,19 +1,10 @@
 package priestSkills;
 
-import Skills.Skills;
-import skillTypes.DamageMethod;
+import skillTypesClasses.DamageSpell;
 
-public class MindBlast extends Skills implements DamageMethod{
+public class MindBlast extends DamageSpell{
 
-	protected int manaCost;
-	
 	public MindBlast(){
-		manaCost = 35;
-	}
-
-	@Override
-	public void doTheDamage() {
-		// TODO Auto-generated method stub
-		
+		super(30,35);
 	}
 }

@@ -1,17 +1,10 @@
 package mageSkills;
 
-import Skills.Skills;
-import skillTypes.DamageOverTime;
+import skillTypesClasses.DamageSpell;
 
-public class FireBall extends Skills implements DamageOverTime{
+public class FireBall extends DamageSpell{
 
-	protected int manaCost;
-	
 	public FireBall(){
-		manaCost = 40;
-	}
-
-	public void doTheDamage() {
-			
+		super(35, 40);
 	}
 }

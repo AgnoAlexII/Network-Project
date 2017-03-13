@@ -1,21 +1,11 @@
 package warriorSkills;
 
-import Skills.Skills;
-import skillTypes.DamageMethod;
+import skillTypesClasses.DamageSpell;
 
-public class HeroicStrike extends Skills implements DamageMethod{
+public class HeroicStrike extends DamageSpell{
 
-	private int rageCost;
-	private int rageRegen;
-	
 	public HeroicStrike(){
-		rageCost = 0;
-		rageRegen = 25;
-	}
-	
-	public void doTheDamage() {
-		// TODO Auto-generated method stub
-		
+		super(25, -25);
 	}
 
 }

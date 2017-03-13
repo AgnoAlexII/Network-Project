@@ -3,40 +3,34 @@ package Classes;
 import abstractClasses.Entity;
 
 public class Rogue extends Entity{
-
-	private int energy; //max energy is 120
-	private int energyRegen;
 	
 	public Rogue(String name) {
 		super(name);
-		this.energy = 120;
-		this.energyRegen = 25;
-		this.setDef(20);
+		this.mana = 120;
+		this.manaRegen = 25;
+		this.def = 20;
+		this.atk = 20;
 	}
-
-	public int getEnergy() {
-		return energy;
+	public void upkeep(){
+		mana += manaRegen;
+		if(mana > 120)
+			mana = 120;
 	}
-
-	public void setEnergy(int energy) {
-		this.energy = energy;
-	}
-
 	
 	public void attack1() {
 		/*
-		 * Name:			Hemmorage
-		 * Energy cost:		35
-		 * Effect:			20 damage for 3 turns
+		 * Name:			Mutilate
+		 * Energy cost:		60
+		 * Effect:			60
 		 */
 		
 	}
 
 	public void attack2() {
 		/*
-		 * Name:			Blind
-		 * Energy Cost:		45
-		 * Effect:			60% chance to disable
+		 * Name:			Kidney Shot
+		 * Energy Cost:		35
+		 * Effect:			45
 		 */
 	}
 

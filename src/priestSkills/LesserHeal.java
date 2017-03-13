@@ -1,20 +1,11 @@
 package priestSkills;
 
-import Skills.Skills;
-import skillTypes.HealMethod;
+import skillTypesClasses.HealingSpell;
 
-public class LesserHeal extends Skills implements HealMethod{
+public class LesserHeal extends HealingSpell{
 
-	protected int manaCost;
-	
 	public LesserHeal(){
-		manaCost = 15;
-	}
-	
-	@Override
-	public void heal() {
-		// TODO Auto-generated method stub
-		
+		super(15, 25);
 	}
 
 	
