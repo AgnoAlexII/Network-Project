@@ -6,8 +6,8 @@ import skillTypesClasses.HealingSpell;
 
 public enum HealingSpellsEnum {
 	
-	HEAL(2, "PRIEST", new Heal()),
-	LESSERHEAL(3, "PRIEST", new LesserHeal());
+	HEAL(3, "PRIEST", new Heal()),
+	LESSERHEAL(4, "PRIEST", new LesserHeal());
 	
 	private int skillNumber;
 	private String className;
@@ -43,4 +43,13 @@ public enum HealingSpellsEnum {
 		this.healingSpell = healingSpell;
 	}
 	
+	public static HealingSpell getHealingSkill(int chosenSkill, String className) {
+		for(HealingSpellsEnum healingSpell : HealingSpellsEnum.values()) {
+			if(healingSpell.getClassName().equalsIgnoreCase(className) &&
+			   healingSpell.getSkillNumber() == chosenSkill) {
+				return healingSpell.getHealingSpell();
+			}
+		}	
+		return null;
+	}
 }

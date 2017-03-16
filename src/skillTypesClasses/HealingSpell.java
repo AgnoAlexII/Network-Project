@@ -1,29 +1,13 @@
 package skillTypesClasses;
 
-public class HealingSpell {
+public abstract class HealingSpell extends Skill{
 
-	private int healing;
-	private int manaCost;
-	
-	public HealingSpell(int healing, int manaCost){
-		this.healing = healing;
-		this.manaCost = manaCost;
+	public HealingSpell(int healing, int manaCost, String name, String description){
+		super(healing, manaCost, name, description);
 	}
 
-	public int getHealing() {
-		return healing;
-	}
-
-	public void setHealing(int healing) {
-		this.healing = healing;
-	}
-
-	public int getManaCost() {
-		return manaCost;
-	}
-
-	public void setManaCost(int manaCost) {
-		this.manaCost = manaCost;
+	public int doTheSkill(int targetHP){
+		return targetHP + benefit;
 	}
 	
 }

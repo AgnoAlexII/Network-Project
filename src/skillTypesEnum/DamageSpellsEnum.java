@@ -27,7 +27,7 @@ public enum DamageSpellsEnum {
 	FIREBALL(3, "MAGE", new FireBall()),
 	BLIZZARD(4, "MAGE", new Blizzard()),
 	DEVOURINGPLAGUE(1, "PRIEST", new DevouringPlague()),
-	MINDBLAST(4, "PRIEST", new MindBlast()),
+	MINDBLAST(2, "PRIEST", new MindBlast()),
 	MUTILATE(1, "ROGUE", new Mutilate()),
 	BACKSTAB(2, "ROGUE", new Backstab()),
 	RUPTURE(3, "ROGUE", new Rupture()),
@@ -41,15 +41,14 @@ public enum DamageSpellsEnum {
 	HAUNT(3, "WARLOCK", new Haunt()),
 	INCINERATE(4, "WARLOCK", new Incinerate());
 	
-	
 	private int skillNumber;
 	private String className;
-	private DamageSpell crowdControl;
+	private DamageSpell damageSpell;
 	
-	DamageSpellsEnum(int skillNumber, String className, DamageSpell crowdControl){
+	DamageSpellsEnum(int skillNumber, String className, DamageSpell damageSpell){
 		this.skillNumber = skillNumber;
 		this.className = className;
-		this.crowdControl = crowdControl;
+		this.damageSpell = damageSpell;
 	}
 
 	public int getSkillNumber() {
@@ -68,11 +67,22 @@ public enum DamageSpellsEnum {
 		this.className = className;
 	}
 
-	public DamageSpell getCrowdControl() {
-		return crowdControl;
+	public DamageSpell getDamageSpell() {
+		return damageSpell;
 	}
 
-	public void setCrowdControl(DamageSpell crowdControl) {
-		this.crowdControl = crowdControl;
+	public void setDamageSpell(DamageSpell damageSpell) {
+		this.damageSpell = damageSpell;
 	}	
+	
+	public static DamageSpell getDamageSkill(int chosenSkill, String className) {
+		for(DamageSpellsEnum dmgSpell : DamageSpellsEnum.values()) {
+			if(dmgSpell.getClassName().equalsIgnoreCase(className) &&
+			   dmgSpell.getSkillNumber() == chosenSkill) {
+				return dmgSpell.getDamageSpell();
+			}
+		}	
+		return null;
+	}
+
 }

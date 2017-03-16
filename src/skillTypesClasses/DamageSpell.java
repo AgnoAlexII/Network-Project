@@ -1,29 +1,13 @@
 package skillTypesClasses;
 
-public abstract class DamageSpell{
-
-	private int damage;
-	private int manaCost;
+public abstract class DamageSpell extends Skill{
 	
-	public DamageSpell(int damage, int manaCost){
-		this.damage = damage;
-		this.manaCost = manaCost;
+	public DamageSpell(int damage, int manaCost, String name, String description){
+		super(damage, manaCost, name, description);
 	}
 
-	public int getDamage() {
-		return damage;
+	public int doTheSkill(int targetHP){		
+		return targetHP - benefit;
 	}
 
-	public void setDamage(int damage) {
-		this.damage = damage;
-	}
-
-	public int getManaCost() {
-		return manaCost;
-	}
-
-	public void setManaCost(int manaCost) {
-		this.manaCost = manaCost;
-	}
-	
 }
