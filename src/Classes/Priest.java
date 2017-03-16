@@ -23,7 +23,7 @@ public class Priest extends Entity{
 		for (int i = 0; i < 2; i++){
 			skills.add(DamageSpellsEnum.getDamageSkill(i + 1, name));
 		}
-		for (int i = 0; i < 4; i++){
+		for (int i = 2; i < 4; i++){
 			skills.add(HealingSpellsEnum.getHealingSkill(i + 1, name));
 		}
 	}

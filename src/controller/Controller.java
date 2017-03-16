@@ -96,9 +96,17 @@ public class Controller {
 	
 	public void battleFlow(){
 		callDisplayStatus();
-		getPlayerMove(player1.getPlayerCharacter(), player2.getPlayerCharacter(), player1.getName(), player2.getName());
-		callDisplayStatus();
-		getPlayerMove(player2.getPlayerCharacter(), player1.getPlayerCharacter(), player2.getName(), player1.getName());
+		if(player2.getPlayerCharacter().getHp() > 0 && player1.getPlayerCharacter().getHp() > 0){
+			getPlayerMove(player1.getPlayerCharacter(), player2.getPlayerCharacter(), player1.getName(), player2.getName());
+			upkeep();
+			callDisplayStatus();
+		}
+		
+		if(player2.getPlayerCharacter().getHp() > 0 && player1.getPlayerCharacter().getHp() > 0){
+			getPlayerMove(player2.getPlayerCharacter(), player1.getPlayerCharacter(), player2.getName(), player1.getName());
+			upkeep();
+			callDisplayStatus();
+		}	
 	}
 	
 	public void battleEnd(){
@@ -113,13 +121,24 @@ public class Controller {
 		
 		view.displaySkills(attackingPlayer.getSkillNames(), attackingPlayerName, attackingPlayer.getSkillDescriptions());
 		int choice;
+		boolean done = false;
+		
 		do{
 			choice = sc.nextInt();
-			implementPlayerMove(attackingPlayer, choice,defendingPlayer);
-		}while(choice <= 0 || choice > 5);
-		if(attackingPlayer instanceof Priest && choice == 3 || choice == 4)
-			view.displayHealingLog(attackingPlayerName, attackingPlayer.getSkillName(choice - 1), attackingPlayer.getSkill(choice).getBenefit());
-		else view.displayAttackLog(attackingPlayerName, attackingPlayer.getSkillName(choice - 1), defendingPlayerName, attackingPlayer.getSkill(choice - 1).getBenefit());
+			done = implementPlayerMove(attackingPlayer, choice, defendingPlayer);
+		}while(done == false);
+		
+		if(attackingPlayer.getName().equalsIgnoreCase("priest") && (choice == 3 || choice == 4)){
+			view.displayHealingLog(attackingPlayerName, attackingPlayer.getSkillName(choice - 1), attackingPlayer.getSkill(choice - 1).getBenefit());
+		}
+		else{
+			if(choice != 5){
+				view.displayAttackLog(attackingPlayerName, attackingPlayer.getSkillName(choice - 1), defendingPlayerName, attackingPlayer.getSkill(choice - 1).getBenefit());
+			}
+			else{
+				view.displayAttackLog(attackingPlayerName, attackingPlayer.getSkillName(choice - 1), defendingPlayerName, attackingPlayer.getAtk());
+			}
+		}
 	}
 	
 	public void callDisplayStatus(){
@@ -128,16 +147,15 @@ public class Controller {
 				   player1.getPlayerCharacter().getMana(), player2.getPlayerCharacter().getMana());
 	}
 	
-	public void implementPlayerMove(Entity attackingPlayer, int choice, Entity defendingPlayer){
+	public boolean implementPlayerMove(Entity attackingPlayer, int choice, Entity defendingPlayer){
 		boolean done = false;
-		
-		do{
-		if(attackingPlayer instanceof Priest){
-			if(choice == 1 || choice == 2 && checkManaCost(attackingPlayer,choice) == true){
+
+		if(attackingPlayer.getName().equalsIgnoreCase("priest")){
+			if((choice == 1 || choice == 2) && checkManaCost(attackingPlayer,choice) == true){
 				defendingPlayer.setHp(attackingPlayer.performSkill(defendingPlayer.getHp(), choice - 1));
 				done = true;
 			}
-			else if(choice == 3 && choice == 4 && checkManaCost(attackingPlayer,choice) == true){
+			else if((choice == 3 || choice == 4) && checkManaCost(attackingPlayer,choice) == true){
 				attackingPlayer.setHp(attackingPlayer.performSkill(attackingPlayer.getHp(), choice - 1));
 				done = true;
 			}
@@ -147,24 +165,37 @@ public class Controller {
 			}
 			else{
 				view.notEnoughMana();
+				done = false;
 			}
+			
 		}
 		else{
-			if(choice >= 1 && choice <= 4 && checkManaCost(attackingPlayer,choice) == true){
+			if((choice >= 1 && choice <= 4) && checkManaCost(attackingPlayer,choice) == true){
 				defendingPlayer.setHp(attackingPlayer.performSkill(defendingPlayer.getHp(), choice - 1));
 				done = true;
 			}
-			else{
+			else if(choice == 5){
 				defendingPlayer.setHp(attackingPlayer.normalAttack(defendingPlayer.getHp()));
 				done = true;
 			}
+			else{
+				view.notEnoughMana();
+				done = false;
+			}
 		}
-		}while(done == false);
+		return done;
 	}
 	
 	public boolean checkManaCost(Entity attackingPlayer, int choice){
-		if(attackingPlayer.getSkill(choice - 1).getManaCost() >= attackingPlayer.getMana())
+		if(attackingPlayer.getSkill(choice - 1).getManaCost() <= attackingPlayer.getMana())
 			return true;
-		else return false;
+		else 
+			return false;
+	}
+	
+	public void upkeep(){
+		player1.getPlayerCharacter().upkeep();
+		player2.getPlayerCharacter().upkeep();
+		view.upkeep(player1.getName(), player2.getName(), player1.getPlayerCharacter().getManaRegen(), player2.getPlayerCharacter().getManaRegen());
 	}
 }

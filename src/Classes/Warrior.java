@@ -16,6 +16,7 @@ public class Warrior extends Entity{
 		mana += manaRegen;
 		if (mana < 0)
 			mana = 0;
+		
 	}
 
 	

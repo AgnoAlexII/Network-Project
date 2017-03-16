@@ -19,6 +19,7 @@ public abstract class Entity {
 		this.hp = 400;
 		skillNames = new String[5];
 		getSkillsFromEnum();
+		initializeSkillNames();
 	}
 	public String getName() {
 		return name;
@@ -51,22 +52,26 @@ public abstract class Entity {
 		this.manaRegen = manaRegen;
 	}	
 	public String getSkillName(int index){
-		return skillNames[index + 1];
+		return skillNames[index];
 	}
 	
-	public String[] getSkillNames() {
-		String[] skillNames = new String[4];
+	public void initializeSkillNames(){
 		for (int i = 0; i < 4; i++){
 			skillNames[i] = skills.get(i).getName();
 		}
+		skillNames[4] = "Attack with weapon";
+	}
+	public String[] getSkillNames() {
+
 		return skillNames;
 	}
 	
 	public String[] getSkillDescriptions(){
-		String[] skillDescriptions = new String[4];
+		String[] skillDescriptions = new String[5];
 		for(int i = 0; i < 4; i++){
 			skillDescriptions[i] = skills.get(i).getDescription();
 		}
+		skillDescriptions[4] = "for " + atk + " damage"; 
 		return skillDescriptions;
 	}
 	public int normalAttack(int enemyHP) {
@@ -80,16 +85,16 @@ public abstract class Entity {
 	
 	public int performSkill(int targetHP, int chosenSkill){
 		mana -= skills.get(chosenSkill).getManaCost();
-		System.out.println(mana);
-		System.out.println(skills.get(chosenSkill).getBenefit());
-		return skills.get(chosenSkill - 1).doTheSkill(targetHP);
+		return skills.get(chosenSkill).doTheSkill(targetHP);
 		
 	}
-	
-	public abstract void getSkillsFromEnum();
 	
 	public Skill getSkill(int index){
 		return skills.get(index);
 	}
+	
+	public abstract void getSkillsFromEnum();
+	public abstract void upkeep();
+
 	
 }
